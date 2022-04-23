@@ -65,14 +65,14 @@ export const myUserForm = () => {
         </span>
        
         <label>Role: </label>
-        <select>
+        <select className={inputClassName} {...register("role", { required: true })}>
             <option value="user">User</option>
             <option value="staff">Staff</option>
             <option value="admin">Admin</option>
         </select>
-        <span></span>
-        <input type="submit" />
-        <span>|</span>
+        <span className={errorClassName}>{errors.role && "Must select role"}</span>
+        
+        <input className={inputClassName} type="submit" />
             
     </form>
 }

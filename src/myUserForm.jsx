@@ -5,9 +5,37 @@ const errorClassName = ""
 export const myUserForm = () => {
     const {register, handleSubmit, watch, formState: {errors}} =useForm()
 
+    const watchPassword = watch(["password", "password_confirmation"])
+    const passwordsMatch = watchPassword[0] = watchPassword[1]
+    console.log(passwordsMatch)
+
     const onSubmit = (formData) => {
+        if (!passwordsMatch) return
+
+        setStatus("Loading.....")
+        
+        fetch("api/users/create", {
+            method: "POST",
+            headers: {
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(formData)
+
+        })
+        .then(response => {
+            if (response.status == 200) {
+                setStatus("Saved!")
+            } else {
+                setStatus("API Error")
+            }
+        })
+        .catch(error => {
+            setStatus("Client Error: " + error)
+        })
+
         console.log(formData)
     }
+
     return <form>
         <label>first name:</label>
             <input className={inputClassName} onSubmit={handleSubmit(onSubmit)}/>
@@ -15,25 +43,27 @@ export const myUserForm = () => {
         <label>last name:</label>
             <input className={inputClassName} {...register("firstname", {required: true, maxLength: 20, pattern: /^[a-zA-Z]*$/})} />
             <span className={errorClassName}>{errors.firstname && "invalid first name"}</span>
-        <label>email:</label>
-        <label>First Name: </label>
-        <input className={inputClassName} />
-        <span className={errorClassName}></span>
-        <label>Last Name: </label>
-        <input className={inputClassName} />
-        <span className={errorClassName}></span>
+      
         <label>Email: </label>
-        <input type="email" className={inputClassName} />
-        <span className={errorClassName}></span>
+        <input type="email" className={inputClassName} {...register("email", {required: true, maxLength: 20, pattern: /^[a-zA-Z]*$/})} />
+        <span className={errorClassName}>{errors.firstname && "invalid last name"}</span>
+       
         <label>Username: </label>
-        <input className={inputClassName} />
-        <span className={errorClassName}></span>
+        <input className={inputClassName} {...register("username", {required: true, maxLength: 20, pattern: /^[a-zA-Z]*$/})} />
+        <span className={errorClassName}>{errors.firstname && "invalid  username"}</span>
+        
         <label>Password: </label>
-        <input type="password" className={inputClassName} />
+        <input type="password" className={inputClassName}
+        {...register("username", {required: true, maxLength: 20, pattern: /^[a-zA-Z]*$/})} />
         <span className={errorClassName}></span>
+        
         <label>Confirm Password: </label>
         <input type="password" className={inputClassName} />
-        <span className={errorClassName}></span>
+        <span className={errorClassName}>
+            {errors.password_confirmation && "invalid password"}
+            {!passwordsMatch ? "the passwords must match" : ""}
+        </span>
+       
         <label>Role: </label>
         <select>
             <option value="user">User</option>

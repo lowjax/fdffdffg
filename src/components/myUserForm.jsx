@@ -1,9 +1,13 @@
+import { useForm } from "react-hook-form"
 const formClassName = ""
 const inputClassName = ""
 const errorClassName = ""
 
-export const myUserForm = () => {
+export const MyUserForm = () => {
+
+
     const {register, handleSubmit, watch, formState: {errors}} =useForm()
+
 
     const watchPassword = watch(["password", "password_confirmation"])
     const passwordsMatch = watchPassword[0] = watchPassword[1]

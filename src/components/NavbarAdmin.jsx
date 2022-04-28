@@ -1,4 +1,12 @@
-import React from "react";
+import React from "react"
+import { Nav } from 'react-bootstrap'
+import ContentlistAD from '../components/ContentcontainerAdmin'
+import Logout from "./Logout"
+import SelectionAdmin from "./selectionAdmin"
+import { Link } from "react-router-dom"
+import BackAarow from "../img/BackArrow.svg"
+
+
 
 export default function NavbarAdmin() {
   return (
@@ -6,7 +14,7 @@ export default function NavbarAdmin() {
       <nav className="navbar navbar-light navbar-expand-md" id="soarNavBar">
         <div className="container-fluid">
           <a href="indexAD.html">
-            <img id="backArrow" src="../assets/img/back_arrow.svg" />
+            <img id="backArrow" src={BackAarow} width={30}/>
           </a>
           <a href="indexAD.html">
             <img id="soarLogo" src="../assets/img/logo_final.svg" />
@@ -21,17 +29,12 @@ export default function NavbarAdmin() {
           </button>
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav">
-              <li className="nav-item" />
-              <li className="nav-item">
-                <a className="nav-link" href="contentlistAD.html">
-                  Favorites
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="logoutAD.html">
-                  Logout
-                </a>
-              </li>
+              <Nav.Link className="nav-link text-center" as= {Link} to='/ContentcontainerAD' element={ContentlistAD}>Content</Nav.Link>
+               
+              <Nav.Link className="nav-link text-center" as= {Link} to='/Logout' element={Logout}>Logout</Nav.Link>
+
+              <Nav.Link className="nav-link text-center" as= {Link} to='/SelectionAdmin' element={SelectionAdmin}>Filter Screen</Nav.Link>
+             
             </ul>
           </div>
         </div>

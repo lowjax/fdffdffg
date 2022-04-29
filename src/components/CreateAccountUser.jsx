@@ -1,8 +1,11 @@
 import React from "react";
+import NavbarUser from "./NavbarUser";
+
 
 export default function CreateAccountUser() {
   return (
     <div>
+      <NavbarUser />
       <div className="row register-form">
         <div className="col-md-8 offset-md-2">
           <form className="custom-form">

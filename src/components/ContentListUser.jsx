@@ -1,8 +1,11 @@
 import React from "react";
+import NavbarUser from "./NavbarUser";
+
 
 export default function ContentListUser() {
   return (
     <div>
+      <NavbarUser />
       <div id="contentContainer">
         <div className="card-group">
           <div class="card">

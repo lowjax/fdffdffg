@@ -45,13 +45,14 @@ export const App = () => {
     return (<> 
     <div>
     <Login />
+    <Router>
         <Routes>
             <Route path="/" element={Login}/>
         </Routes>
-    
+    </Router>
 
 
-    {/* <NavbarAdmin />
+    <NavbarAdmin />
     <IndexAdmin />
     <SelectionAdmin />
     <ContentcontainerAdmin />
@@ -74,7 +75,7 @@ export const App = () => {
 
     {/* <h1 className="text-red-500"> HELLO WORLD</h1> */}
     {/* <Button className={buttonClass} variant="outline-primary">Primary</Button>{' '} */}
-    {/* <MyUserForm /> */}
+    {/* <MyUserForm />
     </div>
     </>)
 

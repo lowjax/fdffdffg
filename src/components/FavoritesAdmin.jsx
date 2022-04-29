@@ -1,8 +1,10 @@
 import React from "react";
+import NavbarAdmin from "./NavbarAdmin"
 
 export default function FavoritesAdmin() {
   return (
     <div>
+      <NavbarAdmin />
       <div id="contentContainer">
         <div className="card-group">
           <div className="card">

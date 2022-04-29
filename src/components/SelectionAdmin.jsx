@@ -1,8 +1,10 @@
 import React from "react";
+import NavbarAdmin from "./NavbarAdmin"
 
 export default function SelectionAdmin() {
   return (
     <div>
+      <NavbarAdmin />
       <div id="carousellContainer">
         <div className="carousel slide" data-bs-ride="carousel" id="carousel-2">
           <div className="carousel-inner">

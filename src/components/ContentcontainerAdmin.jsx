@@ -1,9 +1,11 @@
 import React from "react";
+import NavbarAdmin from "./NavbarAdmin"
 
 export default function ContentcontainerAdmin() {
   return (
     <div>
       <div id="contentContainer">
+        <NavbarAdmin />
         <div className="card-group">
           <div className="card">
             <div className="card-body" id="contentCard">

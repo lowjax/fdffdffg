@@ -1,8 +1,10 @@
 import React from "react";
+import NavbarAdmin from "./NavbarAdmin"
 
 export default function CreateAccountAdmin() {
   return (
     <div>
+      <NavbarAdmin />
       <div className="row register-form">
         <div className="col-md-8 offset-md-2">
           <form className="custom-form">

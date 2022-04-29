@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 // admin imports
-import { MyUserForm } from "./components/MyUserForm"
+// import { MyUserForm } from "./components/MyUserForm"
 // import { Button } from "react-bootstrap"
 import NavbarAdmin  from "./components/NavbarAdmin"
 import ContentcontainerAdmin from "./components/ContentcontainerAdmin"
@@ -48,11 +48,13 @@ export const App = () => {
     <Router>
         <Routes>
             <Route path="/" element={Login}/>
+            <Route path="Home" element={IndexUser}/>
+            <Route path="Index" element={IndexAdmin}/>
         </Routes>
     </Router>
 
 
-    <NavbarAdmin />
+    {/* <NavbarAdmin />
     <IndexAdmin />
     <SelectionAdmin />
     <ContentcontainerAdmin />
@@ -68,15 +70,8 @@ export const App = () => {
     <ContentListUser />
     <FavoritesUser />
     <ContactUser />
-    <Logout /> */}
-
-
-
-
-    {/* <h1 className="text-red-500"> HELLO WORLD</h1> */}
-    {/* <Button className={buttonClass} variant="outline-primary">Primary</Button>{' '} */}
-    {/* <MyUserForm />
+    <Logout />  */}
+ 
     </div>
-    </>)
-
-}
+    </>
+    )};

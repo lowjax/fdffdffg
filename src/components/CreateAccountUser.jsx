@@ -1,15 +1,14 @@
 import React from "react";
 import NavbarUser from "./NavbarUser";
-
+import SoarLogo from "../img/SoarLogo.svg";
 
 export default function CreateAccountUser() {
   return (
     <div>
-      <NavbarUser />
       <div className="row register-form">
         <div className="col-md-8 offset-md-2">
           <form className="custom-form">
-            <img src="../assets/img/logo_final.svg" />
+            <img src={SoarLogo} heigh={40} />
             <h1>Create Account</h1>
             <div className="row form-group">
               <div className="col-sm-4 label-column">

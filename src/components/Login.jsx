@@ -1,4 +1,5 @@
 import React from "react";
+import SoarLogo from "../img/SoarLogo.svg"
 
 export default function Login() {
   return (
@@ -6,7 +7,7 @@ export default function Login() {
       <section className="login-clean">
         <form method="post">
           <h2 className="visually-hidden">Login Form</h2>
-          <img src="../assets/img/logo_final.svg" />
+          <img src={SoarLogo}  heigh={40}/>
           <div className="illustration"></div>
           <div className="mb-3">
             <input

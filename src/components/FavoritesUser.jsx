@@ -1,16 +1,17 @@
 import React from "react";
 import NavbarUser from "./NavbarUser";
+import PhysioContent from "../img/PhysioContent.jpg"
+
 
 
 export default function FavoritesUser() {
   return (
     <div>
-      <NavbarUser />
       <div id="contentContainer">
         <div className="card-group">
           <div className="card">
             <div className="card-body" id="contentCard">
-              <img id="physioImage" src="../assets/img/physio_content_1.jpg" />
+              <img id="physioImage" src={PhysioContent} height={40} />
               <h4 className="card-title">Routine 1</h4>
               <p className="card-text">
                 Nullam id dolor id nibh ultricies vehicula ut id elit. Cras
@@ -26,7 +27,7 @@ export default function FavoritesUser() {
               </button>
             </div>
             <div className="card-body" id="contentCard">
-              <img id="physioImage" src="../assets/img/physio_content_1.jpg" />
+              <img id="physioImage" src={PhysioContent} height={40} />
               <h4 className="card-title">Routine 2</h4>
               <p className="card-text">
                 Nullam id dolor id nibh ultricies vehicula ut id elit. Cras

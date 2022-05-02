@@ -1,31 +1,36 @@
 import React from "react";
 import NavbarAdmin from "./NavbarAdmin"
+import Climbing from "../img/Climbing.svg"
+import Skateboard from "../img/Skateboard.svg"
+import Surf from "../img/Surf.svg"
 
 export default function SelectionAdmin() {
   return (
     <div>
-      <NavbarAdmin />
       <div id="carousellContainer">
         <div className="carousel slide" data-bs-ride="carousel" id="carousel-2">
           <div className="carousel-inner">
             <div className="carousel-item active">
               <img
                 className="w-100 d-block"
-                src="../assets/img/climbing.svg"
+                src={Climbing}
+                height={40}
                 alt="Slide Image 1"
               />
             </div>
             <div className="carousel-item">
               <img
                 className="w-100 d-block"
-                src="../assets/img/skateboard.svg"
+                src={Skateboard}
+                height={40}
                 alt="Slide Image 2"
               />
             </div>
             <div clclassNameass="carousel-item">
               <img
                 className="w-100 d-block"
-                src="../assets/img/surf.svg"
+                src={Surf}
+                height={40}
                 alt="Slide Image 3"
               />
             </div>

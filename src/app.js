@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 // admin imports
 // import { MyUserForm } from "./components/MyUserForm"
 // import { Button } from "react-bootstrap"
@@ -9,6 +10,9 @@ import FavoritesAdmin from "./components/FavoritesAdmin"
 import IndexAdmin from "./components/IndexAdmin"
 import Logout from "./components/Logout"
 import SelectionAdmin from "./components/selectionAdmin"
+
+// theme component
+import Theme from "./components/Theme"
 
 
 
@@ -21,6 +25,15 @@ import ContentListUser from "./components/ContentListUser"
 import IndexUser from "./components/IndexUser"
 import SelectionUser from "./components/SelectionUser"
 
+
+// import images
+import BackArrow from "./img/BackArrow.svg"
+import Climbing from "./img/Climbing.svg"
+// import PhysioContent from "./img/PhysioContent.svg"
+import Skateboard from "./img/Skateboard.svg"
+import SoarLogo from "./img/SoarLogo.svg"
+import Surf from "./img/Surf.svg"
+import BodyDiagram from "./img/BodyDiagram.svg"
 
 
 
@@ -42,35 +55,67 @@ import Login from "./components/Login"
 
 
 export const App = () => {
+    // to put something into local storage
+        localStorage.setItem("email")
+    // to grab something out of local storage
+         const user = localStorage.getItem("email")
+
+
+
+    // theme settings*****
+//   const [user, setUser] = React.useState(null);
+//   const [token, setToken] = React.useState(null);
+//   const [error, setError] = React.useState('');
+//   const [isLoading, setIsLoading] = React.useState(false);
+//   const [lightMode, setLightMode] = React.useState(false);
+
+//   React.useEffect(() => {
+//     const json = localStorage.getItem('site-light-mode');
+//     const currentMode = JSON.parse(json);
+//     if (currentMode) {
+//       setLightMode(true);
+//     } else {
+//       setLightMode(false);
+//     }
+//   }, []);
+//   React.useEffect(() => {
+//     if (lightMode) {
+//       document.body.classList.add('light');
+//     } else {
+//       document.body.classList.remove('light');
+//     }
+//     const json = JSON.stringify(lightMode);
+//     localStorage.setItem('site-light-mode', json);
+//   }, [lightMode]);
+
     return (<> 
     <div>
-    <Login />
-    <Router>
-        <Routes>
-            <Route path="/" element={Login}/>
-            <Route path="Home" element={IndexUser}/>
-            <Route path="Index" element={IndexAdmin}/>
-        </Routes>
-    </Router>
+    {/* <Login /> */}
+    
+    <Theme />
 
-
-    {/* <NavbarAdmin />
-    <IndexAdmin />
-    <SelectionAdmin />
-    <ContentcontainerAdmin />
-    <CreateAccountAdmin />
-    <FavoritesAdmin />
-    <Logout />
-
-
-    <NavbarUser />
+    <NavbarAdmin />
     <CreateAccountUser />
+    <Login />
+    {/* <NavbarUser /> */}
     <IndexUser />
     <SelectionUser />
     <ContentListUser />
     <FavoritesUser />
     <ContactUser />
-    <Logout />  */}
+    <Logout />
+    <CreateAccountAdmin />
+    <IndexAdmin />
+    <SelectionAdmin />
+    <ContentcontainerAdmin />
+    <FavoritesAdmin />
+    <Logout />
+
+
+
+    
+    
+    
  
     </div>
     </>

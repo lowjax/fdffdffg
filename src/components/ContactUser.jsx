@@ -4,7 +4,6 @@ import NavbarUser from "./NavbarUser";
 export default function ContactUser() {
   return (
     <div>
-      <NavbarUser />
       <div>
         <section className="contact-clean">
           <form method="post">

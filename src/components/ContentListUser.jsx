@@ -1,16 +1,18 @@
 import React from "react";
-import NavbarUser from "./NavbarUser";
+// import NavbarUser from "./NavbarUser";
+import { Link } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import PhysioContent from "../img/PhysioContent.jpg"
 
 
 export default function ContentListUser() {
   return (
     <div>
-      <NavbarUser />
       <div id="contentContainer">
         <div className="card-group">
           <div class="card">
             <div className="card-body" id="contentCard">
-              <img id="physioImage" src="../assets/img/physio_content_1.jpg" />
+              <img id="physioImage" src={PhysioContent} height={40}/>
               <h4 className="card-title">Routine 1</h4>
               <p className="card-text">
                 Nullam id dolor id nibh ultricies vehicula ut id elit. Cras
@@ -28,7 +30,7 @@ export default function ContentListUser() {
           </div>
           <div class="card">
             <div className="card-body" id="contentCard">
-              <img id="physioImage" src="../assets/img/physio_content_1.jpg" />
+              <img id="physioImage" src={PhysioContent} height={40} />
               <h4 className="card-title">Routine 2</h4>
               <p className="card-text">
                 Nullam id dolor id nibh ultricies vehicula ut id elit. Cras

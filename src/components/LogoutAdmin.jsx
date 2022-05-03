@@ -1,8 +1,10 @@
 import React from "react";
+import NavbarAdmin from "./NavbarAdmin";
 
-export default function Logout() {
+export default function LogoutAdmin() {
   return (
     <div>
+      <NavbarAdmin />
       <div id="logoutDiv">
         <h1 id="logoutHeader">LOGOUT</h1>
         <p id="logoutParagraph">

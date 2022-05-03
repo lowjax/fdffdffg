@@ -5,6 +5,7 @@ import BodyDiagram from "../img/BodyDiagram.svg";
 export default function IndexUser() {
   return (
     <div>
+      <NavbarUser />
       <div id="bodyDigramContainer">
         <a href="selection.html">
           <img id="bodyDiagram" src={BodyDiagram} height={40} />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
 
-import Logout from "./Logout";
+import LogoutAdmin from "./LogoutAdmin";
 import SelectionAdmin from "./selectionAdmin";
 import { Link } from "react-router-dom";
 import BackAarow from "../img/BackArrow.svg";
@@ -9,6 +9,8 @@ import IndexAdmin from "./IndexAdmin";
 import ContentcontainerAdmin from "../components/ContentcontainerAdmin";
 import FavoritesAdmin from "./FavoritesAdmin";
 import SoarLogo from "../img/SoarLogo.svg";
+import ThemeAdmin from "./ThemeAdmin"
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 
@@ -35,50 +37,61 @@ export default function NavbarAdmin() {
             <div className="collapse navbar-collapse" id="navcol-1">
               <ul className="navbar-nav">
                
-              <Nav.Link
+              <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/IndexAdmin"
                   element={IndexAdmin}
                 >
                   Index Admin
-                </Nav.Link>
+                </Link>
                
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/ContentcontainerAdmin"
                   element={ContentcontainerAdmin}
                 >
                   Content
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/SelectionAdmin"
                   element={SelectionAdmin}
                 >
                   Filter Screen
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/FavoritesAdmin"
                   element={FavoritesAdmin}
                 >
                   Favorites
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+
+                <Link
                   className="nav-link text-center"
                   as={Link}
-                  to="/Logout"
-                  element={Logout}
+                  to="/ThemeAdmin"
+                  element={ThemeAdmin}
+                >
+                  Theme Settings
+                </Link>
+
+
+                <Link
+                  className="nav-link text-center"
+                  as={Link}
+                  to="/LogoutAdmin"
+                  element={LogoutAdmin}
                 >
                   Logout
-                </Nav.Link>
+                </Link>
 
               </ul>
             </div>

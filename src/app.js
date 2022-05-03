@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Link } from "react-router-dom"
+import React from "react"
 // admin imports
 // import { MyUserForm } from "./components/MyUserForm"
 // import { Button } from "react-bootstrap"
@@ -8,11 +9,12 @@ import ContentcontainerAdmin from "./components/ContentcontainerAdmin"
 import CreateAccountAdmin from "./components/CreateAccountAdmin"
 import FavoritesAdmin from "./components/FavoritesAdmin"
 import IndexAdmin from "./components/IndexAdmin"
-import Logout from "./components/Logout"
+import LogoutAdmin from "./components/LogoutAdmin"
 import SelectionAdmin from "./components/selectionAdmin"
 
 // theme component
-import Theme from "./components/Theme"
+import ThemeUser from "./components/ThemeUser"
+import ThemeAdmin from "./components/ThemeAdmin"
 
 
 
@@ -24,6 +26,7 @@ import FavoritesUser from "./components/FavoritesUser"
 import ContentListUser from "./components/ContentListUser"
 import IndexUser from "./components/IndexUser"
 import SelectionUser from "./components/SelectionUser"
+import LogoutUser from "./components/LogoutUser"
 
 
 // import images
@@ -55,61 +58,96 @@ import Login from "./components/Login"
 
 
 export const App = () => {
-    // to put something into local storage
-        localStorage.setItem("email")
-    // to grab something out of local storage
-         const user = localStorage.getItem("email")
+    // React.useEffect(() => {
+    //     const json = localStorage.getItem('site-light-mode');
+    //     const currentMode = JSON.parse(json);
 
 
+        // const [user, setUser] = React.useState(null);
+        const [token, setToken] = React.useState(null);
+        const [error, setError] = React.useState('');
+        const [isLoading, setIsLoading] = React.useState(false);
+        const [lightMode, setLightMode] = React.useState(false);
 
-    // theme settings*****
-//   const [user, setUser] = React.useState(null);
-//   const [token, setToken] = React.useState(null);
-//   const [error, setError] = React.useState('');
-//   const [isLoading, setIsLoading] = React.useState(false);
-//   const [lightMode, setLightMode] = React.useState(false);
+  // useEffect here runs everytime a component loads or theme is changed
+  // and checks which theme to style with based on whats set in localStorage
 
-//   React.useEffect(() => {
-//     const json = localStorage.getItem('site-light-mode');
-//     const currentMode = JSON.parse(json);
-//     if (currentMode) {
-//       setLightMode(true);
-//     } else {
-//       setLightMode(false);
-//     }
-//   }, []);
-//   React.useEffect(() => {
-//     if (lightMode) {
-//       document.body.classList.add('light');
-//     } else {
-//       document.body.classList.remove('light');
-//     }
-//     const json = JSON.stringify(lightMode);
-//     localStorage.setItem('site-light-mode', json);
-//   }, [lightMode]);
+    React.useEffect(() => {
+        const json = localStorage.getItem('site-light-mode');
+        const currentMode = JSON.parse(json);
+            if (currentMode) {
+            setLightMode(true);
+            } else {
+            setLightMode(false);
+            }
+        }, []);
+     React.useEffect(() => {
+            if (lightMode) {
+            document.body.classList.add('light');
+            } else {
+            document.body.classList.remove('light');
+            }
+    const json = JSON.stringify(lightMode);
+    localStorage.setItem('site-light-mode', json);
+  }, [lightMode]);
+
+
+    // // to put something into local storage
+    //     localStorage.setItem("user")
+    // // to grab something out of local storage
+    //      const user = localStorage.getItem("user")
+
+
+  
 
     return (<> 
     <div>
+    <Routes>
+    {/* <Route path="*" element={<Login />} /> */}
+          <Route path="*" element={<IndexUser />} />
+          <Route path="/SelectionUser" element={<SelectionUser />} />
+          <Route path="/ContentListUser" element={<ContentListUser />} />
+          <Route path="/ContactUser" element={<ContactUser />} />
+          <Route path="/FavoritesUser" element={<FavoritesUser />} />
+          <Route path="/ThemeUser" element={<ThemeUser />} />
+          <Route path="/LogoutUser" element={<LogoutUser />} />
+          
+        
+          {/* <Route path="/IndexAdmin" element={<IndexAdmin />} />
+          <Route path="/SelectionAdmin" element={<SelectionAdmin />} />
+          <Route path="/ContentcontainerAdmin" element={<ContentcontainerAdmin />} />
+          <Route path="/FavoritesAdmin" element={<FavoritesAdmin />} />
+          <Route path="/LogoutAdmin" element={<LogoutAdmin />} />
+          <Route path="/ThemeAdmin" element={<ThemeAdmin />} /> */}
+
+
+    </Routes>
+    </div>
+
+    <div>
     {/* <Login /> */}
     
-    <Theme />
 
-    <NavbarAdmin />
+    {/* <NavbarAdmin />
     <CreateAccountUser />
-    <Login />
+    <Login /> */}
     {/* <NavbarUser /> */}
-    <IndexUser />
-    <SelectionUser />
-    <ContentListUser />
-    <FavoritesUser />
-    <ContactUser />
-    <Logout />
-    <CreateAccountAdmin />
-    <IndexAdmin />
-    <SelectionAdmin />
-    <ContentcontainerAdmin />
-    <FavoritesAdmin />
-    <Logout />
+    {/* <IndexUser /> */}
+    {/* <SelectionUser /> */}
+    {/* <ContentListUser /> */}
+    {/* <FavoritesUser /> */}
+    {/* <ContactUser /> */}
+    {/* <LogoutUser /> */}
+    {/* <ThemeUser /> */}
+
+
+    {/* <CreateAccountAdmin /> */}
+    {/* <IndexAdmin /> */}
+    {/* <SelectionAdmin /> */}
+    {/* <ContentcontainerAdmin /> */}
+    {/* <FavoritesAdmin /> */}
+    {/* <LogoutAdmin /> */}
+    {/* <ThemeAdmin /> */}
 
 
 

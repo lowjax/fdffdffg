@@ -5,6 +5,7 @@ import PhysioContent from "../img/PhysioContent.jpg"
 export default function ContentcontainerAdmin() {
   return (
     <div>
+      <NavbarAdmin />
       <div id="contentContainer">
         
         <div className="card-group">

@@ -3,11 +3,13 @@ import React from "react";
 import { Link } from "react-router-dom"
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import PhysioContent from "../img/PhysioContent.jpg"
+import NavbarUser from "./NavbarUser";
 
 
 export default function ContentListUser() {
   return (
     <div>
+      <NavbarUser />
       <div id="contentContainer">
         <div className="card-group">
           <div class="card">

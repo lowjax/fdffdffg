@@ -4,7 +4,8 @@ import ContentListUser from "./ContentListUser";
 import FavoritesUser from "./FavoritesUser";
 import IndexUser from "./IndexUser";
 import Login from "./Login";
-import Logout from "./Logout";
+import LogoutUser from "./LogoutUser";
+import ThemeUser from "./ThemeUser"
 import SelectionUser from "./SelectionUser";
 import BackAarow from "../img/BackArrow.svg";
 import SoarLogo from "../img/SoarLogo.svg";
@@ -13,17 +14,17 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 export default function NavbarUser() {
   return (
     <div>
-      <Router>
+      
         <nav
           className="navbar navbar-light navbar-expand-lg navigation-clean"
           id="soarNavBar"
         >
           <div className="container">
             <a href="index.html">
-              <img id="backArrow" src={BackAarow} width={30} />
+              <img id="backArrow" src={BackAarow} height={30} />
             </a>
             <a href="index.html">
-              <img id="soarLogo" src={SoarLogo} width={30} />
+              <img id="soarLogo" src={SoarLogo} height={30} />
             </a>
             <button
               data-bs-toggle="collapse"
@@ -36,65 +37,78 @@ export default function NavbarUser() {
             <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav">
                 
-            <Nav.Link
+            <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/IndexUser"
                   element={IndexUser}
                 >
                   Home
-                </Nav.Link>
+                </Link>
                 
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/ContentListUser"
                   element={ContentListUser}
                 >
                   Content
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/SelectionUser"
                   element={SelectionUser}
                 >
                   Filter Screen
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+                <Link
                   className="nav-link text-center"
                   as={Link}
                   to="/FavoritesUser"
                   element={FavoritesUser}
                 >
                   Favorites
-                </Nav.Link>
+                </Link>
 
-                <Nav.Link
+
+                <Link
                   className="nav-link text-center"
                   as={Link}
-                  to="/Logout"
-                  element={Logout}
+                  to="/ContactUser"
+                  element={ContactUser}
+                >
+                  Contact User
+                </Link>
+
+
+
+                <Link
+                  className="nav-link text-center"
+                  as={Link}
+                  to="/ThemeUser"
+                  element={ThemeUser}
+                >
+                  Theme Settings
+                </Link>
+
+
+                <Link
+                  className="nav-link text-center"
+                  as={Link}
+                  to="/LogoutUser"
+                  element={LogoutUser}
                 >
                   Logout
-                </Nav.Link>
+                </Link>
 
               </ul>
             </div>
           </div>
         </nav>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/Home" element={<IndexUser />} />
-          <Route path="/Filter" element={<SelectionUser />} />
-          <Route path="/Content" element={<ContentListUser />} />
-          <Route path="/Contact" element={<ContactUser />} />
-          <Route path="/Favorites" element={<FavoritesUser />} />
-          <Route path="/Logout" element={<Logout />} />
-        </Routes>
-      </Router>
+     
     </div>
   );
 }

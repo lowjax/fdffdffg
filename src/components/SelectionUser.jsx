@@ -7,7 +7,7 @@ import Surf from "../img/Surf.svg"
 export default function SelectionUser() {
   return (
     <div>
-      {/* <NavbarUser /> */}
+      <NavbarUser />
       <div id="carousellContainer">
         <div className="carousel slide" data-bs-ride="carousel" id="carousel-2">
           <div className="carousel-inner">

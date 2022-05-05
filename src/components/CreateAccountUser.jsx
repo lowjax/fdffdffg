@@ -9,7 +9,7 @@ export default function CreateAccountUser() {
       <div className="row register-form">
         <div className="col-md-8 offset-md-2">
           <form className="custom-form">
-            <img src={SoarLogo} heigh={40} />
+            <img src={SoarLogo} height={40} />
             <h1>Create Account</h1>
             <div className="row form-group">
               <div className="col-sm-4 label-column">

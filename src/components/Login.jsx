@@ -1,5 +1,10 @@
 import React from "react";
 import SoarLogo from "../img/SoarLogo.svg"
+import IndexUser from "./IndexUser";
+import { Link } from "react-router-dom";
+import IndexAdmin from "./IndexAdmin"
+import CreateAccountUser from "./CreateAccountUser";
+import CreateAccountAdmin from "./CreateAccountAdmin";
 
 export default function Login() {
   return (
@@ -25,52 +30,61 @@ export default function Login() {
               placeholder="Password"
             />
           </div>
-          <a href="#">
-            <a
+          
+            <Link
               className="btn btn-primary d-block w-100"
               role="button"
               id="logInButton"
-              href="../user/index.html"
+              as={Link}
+              to="/IndexUser"
+              element={IndexUser}
               data-bs-target="access/index.html"
             >
               Log In
-            </a>
-          </a>
-          <a href="../user/createaccount.html">
-            <a
+            </Link>
+          
+          
+            <Link
               className="btn btn-primary d-block w-100"
               role="button"
               id="createAccount"
-              href="../user/createaccount.html"
+              as={Link}
+              to="/CreateAccountUser"
+              element={CreateAccountUser}
               data-bs-target="access/index.html"
             >
               Create Account
-            </a>
-          </a>
-          <a href="../Admin/indexAD.html">
-            <a
+            </Link>
+          
+
+         
+          <Link
               className="btn btn-primary d-block w-100"
               role="button"
               id="logInButtonAD"
-              href="../Admin/indexAD.html"
+              as={Link}
+              to="/IndexAdmin"
+              element={IndexAdmin}
               data-bs-target="access/index.html"
             >
               Log In (ADMIN)
-            </a>
-          </a>
-          <a href="../Admin/createaccountAD.html">
-            <a
+            </Link> 
+
+
+            <Link
               className="btn btn-primary d-block w-100"
               role="button"
-              id="createAccountAD"
-              href="../Admin/createaccountAD.html"
+              id="createAccount"
+              as={Link}
+              to="/CreateAccountAdmin"
+              element={CreateAccountAdmin}
               data-bs-target="access/index.html"
             >
               Create Account (ADMIN)
-            </a>
-          </a>
+            </Link>
+
           <div className="mb-3"></div>
-          <a className="forgot">Forgot your email or password?</a>
+          {/* <a className="forgot">Forgot your email or password?</a> */}
         </form>
       </section>
       <script src="../assets/bootstrap/js/bootstrap.min.js"></script>

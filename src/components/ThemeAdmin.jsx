@@ -7,6 +7,9 @@ import SoarLogo from "../img/SoarLogo.svg"
 function LeSettings() {
     const [lightMode, setLightMode] = React.useState(false);
 
+    window.localStorage.setItem("theme setting", lightMode)
+
+
     React.useEffect(() => {
     const json = localStorage.getItem("site-light-mode");
     const currentMode = JSON.parse(json);

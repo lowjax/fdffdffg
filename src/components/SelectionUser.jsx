@@ -3,6 +3,8 @@ import NavbarUser from "./NavbarUser";
 import Climbing from "../img/Climbing.svg"
 import Skateboard from "../img/Skateboard.svg"
 import Surf from "../img/Surf.svg"
+import ContentListUser from "./ContentListUser";
+import { Link } from "react-router-dom";
 
 export default function SelectionUser() {
   return (
@@ -99,11 +101,14 @@ export default function SelectionUser() {
         </form>
       </div>
       <div id="selectionContainer">
-        <a href="contentlist.html">
+        <Link 
+        to="/ContentListUser"
+        as={Link}
+        element={ContentListUser}>
           <button className="btn btn-primary" id="fixMeButton" type="button">
             FIX ME
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

@@ -1,8 +1,12 @@
 import React from "react";
-import NavbarAdmin from "./NavbarAdmin"
-import Climbing from "../img/Climbing.svg"
-import Skateboard from "../img/Skateboard.svg"
-import Surf from "../img/Surf.svg"
+import NavbarAdmin from "./NavbarAdmin";
+import Climbing from "../img/Climbing.svg";
+import Skateboard from "../img/Skateboard.svg";
+import Surf from "../img/Surf.svg";
+import ContentcontainerAdmin from "./ContentcontainerAdmin";
+import { Link } from "react-router-dom";
+
+
 
 export default function SelectionAdmin() {
   return (
@@ -102,11 +106,14 @@ export default function SelectionAdmin() {
         </form>
       </div>
       <div id="selectionContainer">
-        <a href="contentlistAD.html">
+        <Link 
+        to="/ContentcontainerAdmin"
+        as={Link}
+        element={ContentcontainerAdmin}>
           <button className="btn btn-primary" id="fixMeButton" type="button">
             FIX ME
           </button>
-        </a>
+        </Link>
       </div>
     </div>
   );

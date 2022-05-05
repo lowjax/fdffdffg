@@ -1,5 +1,6 @@
 import React from "react";
 import NavbarAdmin from "./NavbarAdmin"
+import SoarLogo from "../img/SoarLogo.svg"
 
 export default function CreateAccountAdmin() {
   return (
@@ -8,7 +9,7 @@ export default function CreateAccountAdmin() {
       <div className="row register-form">
         <div className="col-md-8 offset-md-2">
           <form className="custom-form">
-            <img src="../assets/img/logo_final.svg" />
+          <img src={SoarLogo} height={40} />
             <h1>Create Account</h1>
             <div className="row form-group">
               <div className="col-sm-4 label-column">

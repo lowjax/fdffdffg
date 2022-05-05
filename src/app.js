@@ -1,6 +1,10 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom"
 import { Link } from "react-router-dom"
 import React from "react"
+
+
+
+
 // admin imports
 // import { MyUserForm } from "./components/MyUserForm"
 // import { Button } from "react-bootstrap"
@@ -41,13 +45,16 @@ import BodyDiagram from "./img/BodyDiagram.svg"
 
 
 // css imports
-
+import "../src/css/style.scss"
 import "../src/css/Contact-Form-Clean.css"
 import "../src/css/Login-Form-Clean.css"
 import "../src/css/Navigation-Clean.css"
 import "../src/css/Pretty-Registration-Form.css"
 import "../src/css/styles.css"
 import "../src/css/bootstrap.min.css"
+
+
+//js imports
 import"../src/bootstrap.min.js"
 
 
@@ -103,22 +110,24 @@ export const App = () => {
     return (<> 
     <div>
     <Routes>
-    {/* <Route path="*" element={<Login />} /> */}
-          <Route path="*" element={<IndexUser />} />
+    <Route path="*" element={<Login />} />
+          <Route path="/IndexUser" element={<IndexUser />} />
           <Route path="/SelectionUser" element={<SelectionUser />} />
           <Route path="/ContentListUser" element={<ContentListUser />} />
           <Route path="/ContactUser" element={<ContactUser />} />
           <Route path="/FavoritesUser" element={<FavoritesUser />} />
           <Route path="/ThemeUser" element={<ThemeUser />} />
           <Route path="/LogoutUser" element={<LogoutUser />} />
+          <Route path="/CreateAccountUser" element={<CreateAccountUser />} />
           
         
-          {/* <Route path="/IndexAdmin" element={<IndexAdmin />} />
+          <Route path="/IndexAdmin" element={<IndexAdmin />} />
           <Route path="/SelectionAdmin" element={<SelectionAdmin />} />
           <Route path="/ContentcontainerAdmin" element={<ContentcontainerAdmin />} />
           <Route path="/FavoritesAdmin" element={<FavoritesAdmin />} />
           <Route path="/LogoutAdmin" element={<LogoutAdmin />} />
-          <Route path="/ThemeAdmin" element={<ThemeAdmin />} /> */}
+          <Route path="/ThemeAdmin" element={<ThemeAdmin />} />
+          <Route path="/CreateAccountAdmin" element={<CreateAccountAdmin />} />
 
 
     </Routes>

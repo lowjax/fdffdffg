@@ -33,6 +33,17 @@
 
     <script type="module" src="index.js"></script>
     <!-- <link rel="manifest" href=" "> -->
+    
+    
+    <script type="module"> 
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register(new URL('./serviceworker.js', import.meta.url))
+              .then((reg) => console.log('Success: ', reg.scope))
+              .catch((err) => console.log('Failure: ', err))
+          })
+        }
+      </script>
 
 </body>
 
